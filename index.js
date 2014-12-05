@@ -92,7 +92,7 @@ cli.main(function ( args, options ) {
         _.forEach( selectors, function( declarations, selector ) {
           outputCss += [ selector, '{', selectorSep ].join( space )
           declarations.forEach( function( declaration ) {
-            outputCss += [ declarationPrefix, declaration, declarationSep ].join( space )
+            outputCss += [ declarationPrefix, declaration, declarationSep ].join( '' )
           } )
           outputCss += '}' + lineSep
         } )
