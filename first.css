@@ -1,0 +1,9 @@
+a {  color: red ;  text-decoration: none ; }
+h1 {  color: red ; }
+button {  min-width: 200px ;  padding: 8px ; }
+input[type="text"] {  min-width: 200px ; }
+input {  padding: 8px ; }
+html {  box-sizing: border-box ; }
+* {  box-sizing: inherit ; }
+*:before {  box-sizing: inherit ; }
+ *:after {  box-sizing: inherit ; }

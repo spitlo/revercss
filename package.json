@@ -1,0 +1,32 @@
+{
+  "name": "revercss",
+  "version": "1.0.0",
+  "description": "Declaration-first paradigm for lean and consistent CSS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spitlo/revercss"
+  },
+  "keywords": [
+    "css",
+    "pre-processor",
+    "lean",
+    "consistent",
+    "game-changer"
+  ],
+  "author": "spitlo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spitlo/revercss/issues"
+  },
+  "homepage": "https://github.com/spitlo/revercss",
+  "dependencies": {
+    "cli": "^0.6.5",
+    "lodash": "^2.4.1"
+  },
+  "preferGlobal": "true",
+  "bin": "./index.js"
+}
