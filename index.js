@@ -69,7 +69,7 @@ cli.main(function ( args, options ) {
         }
 
         if ( _selectors.length > 0 && declaration ) {
-          _selectors = _selectors.join( ',' ).replace( ' ', '' ).split( ',' )
+          _selectors = _selectors.join( ',' ).trim().split( ',' )
           _selectors.forEach( function ( tag ) {
             if ( selectors[ tag ] ) {
               if ( selectors[ tag ].indexOf( declaration ) < 0 ) {
