@@ -2,22 +2,30 @@ color: red {
   a, h1
 }
 
+color: rgba(100, 0, 0, .5) {
+  #logo,
+  ul.menu>li a
+}
+
 border: 2px solid {
-  button  
+  button,
+  #logo,
+  ul.menu>li a
 }
 
 text-decoration: none {
-  a
+  ul.menu>li a
 }
 
 min-width: 200px {
-  button
+  button,
   input[type="text"]
 }
 
 padding: 8px {
   button,
-  input
+  input,
+  ul.menu>li a
 }
 
 box-sizing: border-box {

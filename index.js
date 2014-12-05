@@ -10,7 +10,6 @@ cli.parse( {
   output:    [ false, 'Write to FILE rather than the console.', 'file' ]
 } )
 
-
 cli.main(function ( args, options ) {
 
   var inside = false
