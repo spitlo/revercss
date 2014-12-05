@@ -1,0 +1,29 @@
+color: red {
+  a, h1
+}
+
+border: 2px solid {
+  button  
+}
+
+text-decoration: none {
+  a
+}
+
+min-width: 200px {
+  button
+  input[type="text"]
+}
+
+padding: 8px {
+  button,
+  input
+}
+
+box-sizing: border-box {
+  html
+}
+
+box-sizing: inherit {
+  *, *:before, *:after
+}
