@@ -1,7 +1,7 @@
 Revercss
 ========
 
-Declaration-first paradigm for lean and consistent CSS and project maintainibility.
+Declaration-first paradigm for lean, consistent CSS and increased project maintainibility.
 
 ## Installation
 ````
@@ -9,7 +9,7 @@ npm install -g spitlo/revercss
 ```
 
 ## Syntax
-In Revercss, style declarations are the first-class citizens. Selectors belong to one or many declarations:
+In Revercss, style declarations are first-class citizens. Selectors belong to one or many declarations:
 ```CSS
 color: red {
   a, h1
