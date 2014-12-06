@@ -52,15 +52,24 @@ box-sizing: inherit {
 ```
 
 ## Usage
+#### Console output:
 ```BASH
-$ revercss example.revcss | cat
+$ revercss example.revcss
+```
+#### File output
+```BASH
+$ revercss example.revcss -o parsed.css
+```
+#### From stdin
+```BASH
+$ cat example.revcss | revercss
 ```
 
 ## Options
 ```
-  -c, --compact          Output compact CSS.
-  -m, --minified         Output minified CSS.
+  -c, --compact          Output compact CSS
+  -m, --minified         Output minified CSS
   -t, --tabs             Use tabs instead of two spaces in output
-  -o, --output FILE      Write to FILE rather than the console.
+  -o, --output FILE      Write to FILE rather than the console
   -h, --help             Display help and usage details
 ```
