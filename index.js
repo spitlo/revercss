@@ -10,7 +10,7 @@ cli.parse( {
   output:    [ 'o', 'Write to FILE rather than the console.', 'file' ]
 } )
 
-cli.main(function ( args, options ) {
+cli.main( function ( args, options ) {
 
   var inside = false
   var declarations = {}
@@ -42,23 +42,23 @@ cli.main(function ( args, options ) {
     return str.trim().replace( rx, '' )
   }
 
-  var handleInput = function (line, sep, eof) {
+  var handleInput = function ( line, sep, eof ) {
     if ( !eof ) {
       /*
       * Input phase
       */
+
       if ( line.indexOf( '{' ) > -1 ) {
         // Start of selector block
         inside = true
-        declaration = line.split( '{' )[0].trim()
-        declarations[declaration] = []
+        declaration = line.split( '{' )[ 0 ].trim()
         _selectors = []
       } else if ( line.indexOf( '}' ) > -1 ) {
         // End of selector block
         inside = false
         declaration = ''
         if ( line.split( '}' ).length > 1 ) {
-          selector = line.split( '}' )[0].trim()
+          selector = line.split( '}' )[ 0 ].trim()
           selector && _selectors.push( removeTrailingChar( selector ) )
         }
       } else if ( inside ) {
@@ -79,8 +79,6 @@ cli.main(function ( args, options ) {
         } )
       }
 
-    } else if (cli.args.length) {
-      cli.output('Revercss only supports one file at a time.')
     } else {
       /*
       * Output phase
@@ -102,16 +100,16 @@ cli.main(function ( args, options ) {
         }
         outputStream.write( outputCss )
       } catch ( e ) {
-        this.fatal('Could not write to output stream.')
+        this.fatal( 'Could not write to output stream.' )
       }
 
     }
   }
 
-  if (cli.args.length) {
+  if ( cli.args.length ) {
     cli.withInput( cli.args.shift(), handleInput )
   } else {
     cli.withInput( handleInput )
   }
 
-})
+} )
