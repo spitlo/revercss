@@ -58,9 +58,9 @@ $ revercss example.revcss | cat
 
 ## Options
 ```
-  -c, --compact          Create compact CSS.
-  -m, --minified         Create minified CSS.
-  -e, --echo             Echo results.
-      --output FILE      Write to FILE rather than the console.
+  -c, --compact          Output compact CSS.
+  -m, --minified         Output minified CSS.
+  -t, --tabs             Use tabs instead of two spaces in output
+  -o, --output FILE      Write to FILE rather than the console.
   -h, --help             Display help and usage details
 ```
