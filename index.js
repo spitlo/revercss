@@ -7,7 +7,7 @@ cli.parse( {
   compact:   [ 'c', 'Output compact CSS.' ],
   minified:  [ 'm', 'Output minified CSS.' ],
   tabs:      [ 't', 'Use tabs instead of two spaces in output' ],
-  output:    [ false, 'Write to FILE rather than the console.', 'file' ]
+  output:    [ 'o', 'Write to FILE rather than the console.', 'file' ]
 } )
 
 cli.main(function ( args, options ) {
