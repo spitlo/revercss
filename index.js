@@ -4,9 +4,8 @@ var cli = require( 'cli' )
 var _ = require( 'lodash' )
 
 cli.parse( {
-  compact:   [ 'c', 'Create compact CSS.' ],
-  minified:  [ 'm', 'Create minified CSS.' ],
-  echo:      [ 'e', 'Echo results.' ],
+  compact:   [ 'c', 'Output compact CSS.' ],
+  minified:  [ 'm', 'Output minified CSS.' ],
   output:    [ false, 'Write to FILE rather than the console.', 'file' ]
 } )
 
