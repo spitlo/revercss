@@ -43,6 +43,7 @@ var readLine = function ( line ) {
   }
 
   if ( _selectors.length > 0 && declaration ) {
+    if (separators.minAll) declaration = declaration.replace(/([\:\,])\s/g, function ( str, grp1 ) { return grp1 } )
     _selectors = _selectors.join( ',' ).trim().split( ',' )
     _selectors.forEach( function ( tag ) {
       tag = tag.trim()
@@ -83,6 +84,16 @@ var revercss = function ( stream, options, cb ) {
     separators.indentationLength = ~~options.spaces
   }
   separators.indentation = new Array( separators.indentationLength + 1).join( separators.indentationChar )
+  if ( options.compact ) {
+    separators.lineSep = '\n'
+    separators.declarationSep = '; '
+    separators.selectorSep = separators.indentation = declarationPrefix = ''
+  }
+  if ( options.minified ) {
+    separators.declarationSep = ';'
+    separators.lineSep = separators.selectorSep = separators.indentation = separators.space = ''
+    separators.minAll = true
+  }
 
   stream = byline.createStream( stream )
 

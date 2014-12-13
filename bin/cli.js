@@ -1,26 +1,41 @@
 #!/usr/bin/env node
 
 var revercss = require( '../')
-var argv = require('minimist')(process.argv.slice(2))
 var fs = require( 'fs' )
+var path = require('path')
+var minimist = require('minimist')
 
+var argv = minimist( process.argv.slice( 2 ), {
+  alias: { 
+    i: 'infile',
+    o: 'outfile',
+    c: 'compact',
+    m: 'minified',
+    t: 'tabs',
+    s: 'spaces',
+    h: 'help',
+  },
+  default: {
+    outfile: '-',
+    spaces: 2
+  }
+} )
+console.log(argv);
+var options = {}
+if ( argv.compact ) options.compact = true
+if ( argv.minified ) options.minified = true
+if ( argv.tabs ) options.tabs = true
+if ( argv.spaces ) options.spaces = argv.spaces
 
+var infile = argv.infile || argv._[0];
 
-// var lineSep = '\n\n'
-// var selectorSep = '\n'
-// var declarationSep = ';\n'
-// var declarationPrefix = options.tabs ? '\t' : '  '
-// var space = ' '
+var input = infile === '-' || !infile
+  ? process.stdin
+  : fs.createReadStream(infile)
 
-// if ( options.compact ) {
-//   lineSep = '\n'
-//   declarationSep = '; '
-//   selectorSep = declarationPrefix = ''
-// }
-// if ( options.minified ) {
-//   declarationSep = ';'
-//   lineSep = selectorSep = declarationPrefix = space = ''
-// }
+var output = argv.outfile === '-'
+  ? process.stdout
+  : fs.createWriteStream(argv.outfile)
 
 var done = function ( outputCss ) {
   try {
@@ -35,8 +50,4 @@ var done = function ( outputCss ) {
   }
 }
 
-if ( argv._.length > 0 ) {
-  revercss( fs.createReadStream( process.cwd() + '/' + argv._[0] ), done )
-} else {
-  revercss( process.stdin, done )
-}
+revercss( input, options, done )
