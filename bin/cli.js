@@ -20,7 +20,7 @@ var argv = minimist( process.argv.slice( 2 ), {
     spaces: 2
   }
 } )
-console.log(argv);
+
 var options = {}
 if ( argv.compact ) options.compact = true
 if ( argv.minified ) options.minified = true
