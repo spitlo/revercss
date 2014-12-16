@@ -1,6 +1,6 @@
 {
   "name": "revercss",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Declaration-first paradigm for lean, consistent CSS and increased project maintainibility.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
