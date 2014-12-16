@@ -80,7 +80,8 @@ var revercss = function ( stream, options, cb ) {
   options = options || {}
   if ( options.tabs ) { 
     separators.indentationChar = '\t'
-  } else if ( options.spaces ) {
+  }
+  if ( options.spaces ) {
     separators.indentationLength = ~~options.spaces
   }
   separators.indentation = new Array( separators.indentationLength + 1).join( separators.indentationChar )

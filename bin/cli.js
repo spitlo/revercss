@@ -2,7 +2,6 @@
 
 var revercss = require( '../')
 var fs = require( 'fs' )
-var path = require('path')
 var minimist = require('minimist')
 
 var argv = minimist( process.argv.slice( 2 ), {
@@ -39,15 +38,27 @@ var output = argv.outfile === '-'
 
 var done = function ( outputCss ) {
   try {
-    if ( argv.output ) {
-      outputStream = fs.createWriteStream( argv.output )
-    } else {
-      outputStream = process.stdout
-    }
-    outputStream.write( outputCss )
+    output.write( outputCss )
   } catch ( e ) {
     console.log( 'Could not write to output stream.' )
   }
+}
+
+if ( argv.help ) {
+  var helpText = [
+    'USAGE: revercss [options] <file>',
+    '  Options:',
+    '    -c, --compact        \tOutput compact CSS',
+    '    -m, --minified       \tOutput minified CSS',
+    '    -t, --tabs           \tUse tabs instead of two spaces in output',
+    '    -s, --spaces         \tNumber of spaces/tabs to indent (default: 2)',
+    '    -o, --outfile <file> \tWrite to FILE rather than the console',
+    '    -h, --help           \tDisplay help and usage details'
+  ]
+  helpText.forEach( function( line ) {
+    console.log( line )
+  } )
+  process.exit( 1 )
 }
 
 revercss( input, options, done )
