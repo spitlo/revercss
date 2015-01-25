@@ -69,7 +69,7 @@ $ cat example.revcss | revercss
 ```
     -c, --compact        	Output compact CSS
     -m, --minified       	Output minified CSS
-    -t, --tabs           	Use tabs instead of two spaces in output
+    -t, --tabs           	Use tabs instead of spaces in output
     -s, --spaces         	Number of spaces/tabs to indent (default: 2)
     -o, --outfile <file> 	Write to FILE rather than the console
     -h, --help           	Display help and usage details
