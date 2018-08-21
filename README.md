@@ -4,7 +4,7 @@ Revercss
 Declaration-first paradigm for lean, consistent CSS and increased project maintainibility.
 
 ## Installation
-````
+```
 npm install -g spitlo/revercss
 ```
 
